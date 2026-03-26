@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Постільна білизна вашої мрії</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f5f3;
+      color: #2f2f39;
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background: linear-gradient(rgba(0,0,0,0.32), rgba(0,0,0,0.32)),
+        url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 72px);
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2.3vw, 30px);
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d92d35;
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 38px;
+      border-radius: 14px;
+      font-size: 20px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 12px 24px rgba(217, 45, 53, 0.28);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .features {
+      margin-top: -40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .feature {
+      padding: 28px 22px;
+      text-align: center;
+      border-right: 1px solid #ece9e6;
+    }
+
+    .feature:last-child {
+      border-right: none;
+    }
+
+    .feature-icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(32px, 4vw, 52px);
+      margin-bottom: 40px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    }
+
+    .card img {
+      height: 260px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .card h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: #d92d35;
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .advantages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .advantage {
+      background: #fff;
+      border-radius: 20px;
+      padding: 26px 18px;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+    }
+
+    .advantage-icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .advantage h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .order-box {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 26px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    .order-box p {
+      margin-bottom: 22px;
+      color: #666;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .form-grid input {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      font-size: 16px;
+    }
+
+    .form-note {
+      color: #777;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+
+    footer {
+      background: #ece9e6;
+      padding: 28px 0;
+      margin-top: 24px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .payments,
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 700;
+    }
+
+    .footer-links a {
+      color: #444;
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .products,
+      .advantages,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        border-right: none;
+        border-bottom: 1px solid #ece9e6;
+      }
+
+      .feature:last-child {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .section {
+        padding: 56px 0;
+      }
+
+      .card img {
+        height: 220px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Постільна білизна вашої мрії</h1>
+      <p>Комфорт, стиль і ніжність для вашої оселі</p>
+      <a href="#order" class="btn">Купити зараз</a>
+    </div>
+  </section>
+
+  <section class="features container">
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">🛡️</div>
+        <h3>Висока якість</h3>
+        <p>Натуральні матеріали та приємна на дотик тканина</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <h3>Швидка доставка</h3>
+        <p>Відправка по Україні за 1–2 дні</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">✅</div>
+        <h3>Гарантія 100%</h3>
+        <p>Обмін та повернення без зайвих складнощів</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Популярні комплекти</h2>
+      <div class="products">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1616627547584-bf28cee262db?auto=format&fit=crop&w=900&q=80" alt="Сатиновий беж" />
+          <div class="card-body">
+            <h3>Сатиновий беж</h3>
+            <div class="price">850 грн</div>
+            <a href="#order" class="btn">Детальніше</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Смужки блю" />
+          <div class="card-body">
+            <h3>Смужки блю</h3>
+            <div class="price">920 грн</div>
+            <a href="#order" class="btn">Детальніше</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1616047006789-b7d6b0f5b8c1?auto=format&fit=crop&w=900&q=80" alt="Рожевий флор" />
+          <div class="card-body">
+            <h3>Рожевий флор</h3>
+            <div class="price">890 грн</div>
+            <a href="#order" class="btn">Детальніше</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Чому обирають нас</h2>
+      <div class="advantages">
+        <div class="advantage">
+          <div class="advantage-icon">🌿</div>
+          <h3>Еко матеріали</h3>
+          <p>Лише якісні та безпечні тканини для щоденного використання</p>
+        </div>
+        <div class="advantage">
+          <div class="advantage-icon">🧵</div>
+          <h3>Ідеальний пошив</h3>
+          <p>Рівні шви, надійна фурнітура та акуратне виконання</p>
+        </div>
+        <div class="advantage">
+          <div class="advantage-icon">⏱️</div>
+          <h3>Швидка відправка</h3>
+          <p>Оперативно оформлюємо і передаємо замовлення на доставку</p>
+        </div>
+        <div class="advantage">
+          <div class="advantage-icon">❤️</div>
+          <h3>Задоволені покупці</h3>
+          <p>Нам довіряють клієнти, які цінують комфорт і якість</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="order">
+    <div class="container">
+      <div class="order-box">
+        <h2 class="section-title" style="margin-bottom: 14px;">Оформити замовлення</h2>
+        <p>Залиште свої дані, і ми зв'яжемося з вами найближчим часом. Заявка буде надіслана в Telegram.</p>
+        <form class="form-grid" id="orderForm">
+          <input type="text" name="name" placeholder="Ваше ім'я" required />
+          <input type="tel" name="phone" placeholder="Ваш телефон" required />
+          <input type="email" name="email" placeholder="Ваш e-mail" required />
+          <button type="submit" class="btn" style="border:none; cursor:pointer; width:100%;">Замовити</button>
+        </form>
+        <div class="form-note">Ми гарантуємо конфіденційність ваших даних.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-row">
+      <div class="payments">
+        <span>VISA</span>
+        <span>Mastercard</span>
+        <span>PayPal</span>
+      </div>
+      <div class="footer-links">
+        <a href="#">Про нас</a>
+        <a href="#">Доставка і оплата</a>
+        <a href="#">Контакти</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = this;
+      const formData = new FormData(form);
+      const name = formData.get('name')?.toString().trim();
+      const phone = formData.get('phone')?.toString().trim();
+      const email = formData.get('email')?.toString().trim();
+      const button = form.querySelector('button[type="submit"]');
+      const originalText = button.textContent;
+
+      try {
+        button.disabled = true;
+        button.textContent = 'Відправляємо...';
+
+        const response = await fetch('/api/order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            product: 'Постільна білизна',
+            price: 'від 850 грн',
+            name,
+            phone,
+            email
+          })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.ok) {
+          throw new Error(data.message || 'Помилка відправки');
+        }
+
+        alert('Дякуємо! Ваша заявка відправлена в Telegram.');
+        form.reset();
+      } catch (error) {
+        alert('Не вдалося відправити заявку. Перевір /api/order і налаштування Vercel.');
+      } finally {
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    });
+  </script>
+</body>
+</html>
